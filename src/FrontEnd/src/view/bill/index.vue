@@ -1,74 +1,88 @@
 <template>
     <div>
-        <!-- 搜索框操控组件 -->
-        <Card style="margin-bottom: 5px">
-            <div class="search-bar">
-                <Form inline label-position="left" :label-width="60" >
-                    <FormItem label="句子ID">
-                        <Input type="text" placeholder="" style="width:80px">
-                        </Input>
-                    </FormItem>
-                    <FormItem label="支付方式" >
-                        <Select :value="-1">
-                            <Option :value="-1">全部</Option>
-                            <Option :value="1">支付宝</Option>
-                            <Option :value="0">微信</Option>
-                        </Select>
-                    </FormItem>
-                </Form>
-            </div>            
-        </Card>
-        <Card>
-            <!-- 工具栏 -->
-            <div>
-                <Row :gutter="16">
-                    <Col span="3">
-                        <ButtonGroup >
-                            <Button @click="search()">搜索</Button>
-                            <Button @click="refresh()">刷新</Button>
-                        </ButtonGroup>
-                    </Col>
-                    <Col span="2">
-                        <Upload action="">
-                            <Button  type="success" icon="ios-cloud-upload-outline">微信</Button>
-                        </Upload>
-                    </Col>
-                    <Col span="2">
-                        <Upload action="">
-                            <Button type="primary" icon="ios-cloud-upload-outline">支付宝</Button>
-                        </Upload>
-                    </Col>
-                </Row>
+        <Row :gutter="16">
+            <Col :span="18">
+                <!-- 搜索框操控组件 -->
+                <Card style="margin-bottom: 5px">
+                    <div class="search-bar">
+                        <Form inline label-position="left" :label-width="60" >
+                            <FormItem label="句子ID">
+                                <Input type="text" placeholder="" style="width:80px">
+                                </Input>
+                            </FormItem>
+                            <FormItem label="支付方式" >
+                                <Select :value="-1">
+                                    <Option :value="-1">全部</Option>
+                                    <Option :value="1">支付宝</Option>
+                                    <Option :value="0">微信</Option>
+                                </Select>
+                            </FormItem>
+                        </Form>
+                    </div>            
+                </Card>
+                <Card>
+                    <!-- 工具栏 -->
+                    <div>
+                        <Row :gutter="16">
+                            <Col span="3">
+                                <ButtonGroup >
+                                    <Button @click="search()">搜索</Button>
+                                    <Button @click="refresh()">刷新</Button>
+                                </ButtonGroup>
+                            </Col>
+                            <Col span="2">
+                                <Upload action="">
+                                    <Button  type="success" icon="ios-cloud-upload-outline">微信</Button>
+                                </Upload>
+                            </Col>
+                            <Col span="2">
+                                <Upload action="">
+                                    <Button type="primary" icon="ios-cloud-upload-outline">支付宝</Button>
+                                </Upload>
+                            </Col>
+                        </Row>
 
 
-            </div>
-            <!-- 表格显示部分 -->
-            <div>
-                <Table border :columns="columns" :data="columns_data">
-                    <template slot-scope="{ row,index }" slot="action">
-                        <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">查看</Button>踹</Button>
-                        <Button type="error" size="small" @click="remove(index)">删除</Button>
-                    </template>
-                </Table>
-                <br>
-            </div>
-            <!-- 分页部分 -->
-            <div>
-                <Page
-                    :total="total" 
-                    :page-size="pageSize"
-                    @on-change="on_change"
-                >
+                    </div>
+                    <!-- 表格显示部分 -->
+                    <div>
+                        <Table border :columns="columns" :data="columns_data">
+                            <template slot-scope="{ row,index }" slot="action">
+                                <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">查看</Button>踹</Button>
+                                <Button type="error" size="small" @click="remove(index)">删除</Button>
+                            </template>
+                        </Table>
+                        <br>
+                    </div>
+                    <!-- 分页部分 -->
+                    <div>
+                        <Page
+                            :total="total" 
+                            :page-size="pageSize"
+                            @on-change="on_change"
+                        >
+                        </Page>
+                    </div>
+                </Card>
+            </Col>
+            <Col :span="6">
+                <Calendar
+                    v-on:choseDay="clickDay"
+                    v-on:changeMonth="changeDate"
+                ></Calendar>
+            </Col>
+        </Row>
 
-                </Page>
-            </div>
-        </Card>
 
     </div>
 </template>
 
 <script>
+import Calendar from 'vue-calendar-component';
 export default {
+    components: {
+        Calendar
+    },
     data(){
         return{
             total:11,
@@ -119,7 +133,18 @@ export default {
         remove (index) {
             this.data6.splice(index, 1);
             alert("删除了第"+index)
-        }
+        },
+
+        clickDay(data) {
+        console.log(data); //选中某天
+        },
+        changeDate(data) {
+        console.log(data); //左右点击切换月份
+        },
+        clickToday(data) {
+        console.log(data); // 跳到了本月
+    }
+        
     }
 }
 </script>
