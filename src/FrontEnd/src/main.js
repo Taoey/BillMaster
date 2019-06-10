@@ -16,6 +16,10 @@ import '@/assets/icons/iconfont.css'
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock')
 
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
 Vue.use(iView, {
   i18n: (key, value) => i18n.t(key, value)
 })

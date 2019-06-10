@@ -3,19 +3,7 @@
         <!-- 搜索框操控组件 -->
         <Card style="margin-bottom: 5px">
             <div class="search-bar">
-                <Form inline label-position="left" :label-width="60" >
-                    <FormItem label="句子ID">
-                        <Input type="text" placeholder="" style="width:80px">
-                        </Input>
-                    </FormItem>
-                    <FormItem label="支付方式" >
-                        <Select :value="-1">
-                            <Option :value="-1">全部</Option>
-                            <Option :value="1">支付宝</Option>
-                            <Option :value="0">微信</Option>
-                        </Select>
-                    </FormItem>
-                </Form>
+                <i-switch   v-model="pay_type_show" />
             </div>            
         </Card>
         <Card>
@@ -71,6 +59,7 @@
 export default {
     data(){
         return{
+            pay_type_show:true,
             total:11,
             pageSize:10,
             columns_data:[],

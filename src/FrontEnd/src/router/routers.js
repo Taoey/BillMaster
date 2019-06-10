@@ -58,10 +58,10 @@ export default [
       icon: 'ios-book'
     }
   },
-  //   自定义路由
+  //   账单管理
   {
-    path: '/bill',
-    name: '账单管理',
+    path: '/bill/detail',
+    name: 'detail',
     component: Main,
     meta: {
       hideInBread: true,
@@ -70,17 +70,38 @@ export default [
     },
     children: [
       {
-        path: 'detail',
-        name: 'detail',
+        path: 'index',
+        name: '账单详情',
         meta: {
           icon: 'md-trending-up',
           title: '账单详情'
         },
         component: () => import('@/view/bill/index.vue')
-      }
+      },
     ]
   },
-
+  //账单统计
+  {
+    path: '/bill/statistic',
+    name: 'statistic',
+    component: Main,
+    meta: {
+      hideInBread: true,
+      title: '账单管理',
+      icon: 'ios-book'
+    },
+    children: [
+      {
+        path: 'index',
+        name: '账单汇总',
+        meta: {
+          icon: 'md-trending-up',
+          title: '账单汇总'
+        },
+        component: () => import('@/view/bill/statistics.vue')
+      },
+    ]
+  },
   {
     path: '/multilevel',
     name: 'multilevel',

@@ -1,77 +1,113 @@
 <template>
   <div>
-    <Row :gutter="20">
-      <i-col :xs="12" :md="8" :lg="4" v-for="(infor, i) in inforCardData" :key="`infor-${i}`" style="height: 120px;padding-bottom: 10px;">
-        <infor-card shadow :color="infor.color" :icon="infor.icon" :icon-size="36">
-          <count-to :end="infor.count" count-class="count-style"/>
-          <p>{{ infor.title }}</p>
-        </infor-card>
-      </i-col>
-    </Row>
-    <Row :gutter="20" style="margin-top: 10px;">
-      <i-col :md="24" :lg="8" style="margin-bottom: 20px;">
-        <Card shadow>
-          <chart-pie style="height: 300px;" :value="pieData" text="用户访问来源"></chart-pie>
-        </Card>
-      </i-col>
-      <i-col :md="24" :lg="16" style="margin-bottom: 20px;">
-        <Card shadow>
-          <chart-bar style="height: 300px;" :value="barData" text="每周用户活跃量"/>
-        </Card>
-      </i-col>
-    </Row>
-    <Row>
-      <Card shadow>
-        <example style="height: 310px;"/>
-      </Card>
-    </Row>
+    <card style="margin:0 auto">
+        <div id="pay_type_chart" :style="{width: '80%', height: '400px'}"></div>
+    </card>
   </div>
 </template>
 
 <script>
-import InforCard from '_c/info-card'
-import CountTo from '_c/count-to'
-import { ChartPie, ChartBar } from '_c/charts'
-import Example from './example.vue'
+
+
 export default {
-  name: 'home',
+
   components: {
-    InforCard,
-    CountTo,
-    ChartPie,
-    ChartBar,
-    Example
+
   },
   data () {
     return {
-      inforCardData: [
-        { title: '新增用户', icon: 'md-person-add', count: 803, color: '#2d8cf0' },
-        { title: '累计点击', icon: 'md-locate', count: 232, color: '#19be6b' },
-        { title: '新增问答', icon: 'md-help-circle', count: 142, color: '#ff9900' },
-        { title: '分享统计', icon: 'md-share', count: 657, color: '#ed3f14' },
-        { title: '新增互动', icon: 'md-chatbubbles', count: 12, color: '#E46CBB' },
-        { title: '新增页面', icon: 'md-map', count: 14, color: '#9A66E4' }
-      ],
-      pieData: [
-        {value: 335, name: '直接访问'},
-        {value: 310, name: '邮件营销'},
-        {value: 234, name: '联盟广告'},
-        {value: 135, name: '视频广告'},
-        {value: 1548, name: '搜索引擎'}
-      ],
-      barData: {
-        Mon: 13253,
-        Tue: 34235,
-        Wed: 26321,
-        Thu: 12340,
-        Fri: 24643,
-        Sat: 1322,
-        Sun: 1324
-      }
+        
     }
   },
   mounted () {
-    //
+    this.draw_pay_type_chart()
+  },
+  methods:{
+    // 支付方式对比图
+    draw_pay_type_chart(){
+        let setChart = this.$echarts.init(document.getElementById('pay_type_chart'),'vintage')
+        setChart.setOption({
+            title : {
+                text: '支付方式对比图',
+                subtext: '',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['微信','其他','支付宝']
+            },
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius : '40%',
+                    center: ['50%', '50%'],
+                    data:[
+                        {value:335, name:'微信'},
+                        {value:310, name:'支付宝'},
+                        {value:234, name:'其他'},
+                    ],
+                    label:{
+                        normal: {
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            // shadowBlur:3,
+                            // shadowOffsetX: 2,
+                            // shadowOffsetY: 2,
+                            // shadowColor: '#999',
+                            // padding: [0, 7],
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                // abg: {
+                                //     backgroundColor: '#333',
+                                //     width: '100%',
+                                //     align: 'right',
+                                //     height: 22,
+                                //     borderRadius: [4, 4, 0, 0]
+                                // },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '20%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 33
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        })
+    },
+
   }
 }
 </script>
