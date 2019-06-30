@@ -60,48 +60,45 @@ export default [
   },
   //   账单管理
   {
-    path: '/bill/detail',
-    name: 'detail',
+    path: '/bill',
+    name: 'bill',
     component: Main,
     meta: {
       hideInBread: true,
-      title: '账单管理',
+      title: '账单',
       icon: 'ios-book'
     },
     children: [
       {
-        path: 'index',
+        path: 'detail',
         name: '账单详情',
         meta: {
           icon: 'md-trending-up',
           title: '账单详情'
         },
-        component: () => import('@/view/bill/index.vue')
+        component: () => import('@/view/bill/detail.vue')
       },
-    ]
-  },
-  //账单统计
-  {
-    path: '/bill/statistic',
-    name: 'statistic',
-    component: Main,
-    meta: {
-      hideInBread: true,
-      title: '账单管理',
-      icon: 'ios-book'
-    },
-    children: [
       {
-        path: 'index',
-        name: '账单汇总',
+        path: 'statistic',
+        name: '账单统计',
         meta: {
           icon: 'md-trending-up',
-          title: '账单汇总'
+          title: '账单统计'
+        },
+        component: () => import('@/view/bill/statistics.vue')
+      },
+      {
+        path: 'plan',
+        name: '支付计划',
+        meta: {
+          icon: 'md-trending-up',
+          title: '支付计划'
         },
         component: () => import('@/view/bill/statistics.vue')
       },
     ]
   },
+
   {
     path: '/multilevel',
     name: 'multilevel',

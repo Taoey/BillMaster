@@ -1,121 +1,119 @@
 <template>
-    <div>
-        <!-- 搜索框操控组件 -->
-        <Card style="margin-bottom: 5px">
-            <div class="search-bar">
-                <i-switch   v-model="pay_type_show" />
-            </div>            
-        </Card>
-        <Card>
-            <!-- 工具栏 -->
-            <div>
-                <Row :gutter="16">
-                    <Col span="3">
-                        <ButtonGroup >
-                            <Button @click="search()">搜索</Button>
-                            <Button @click="refresh()">刷新</Button>
-                        </ButtonGroup>
-                    </Col>
-                    <Col span="2">
-                        <Upload action="">
-                            <Button  type="success" icon="ios-cloud-upload-outline">微信</Button>
-                        </Upload>
-                    </Col>
-                    <Col span="2">
-                        <Upload action="">
-                            <Button type="primary" icon="ios-cloud-upload-outline">支付宝</Button>
-                        </Upload>
-                    </Col>
-                </Row>
-
-
-            </div>
-            <!-- 表格显示部分 -->
-            <div>
-                <Table border :columns="columns" :data="columns_data">
-                    <template slot-scope="{ row,index }" slot="action">
-                        <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">查看</Button>踹</Button>
-                        <Button type="error" size="small" @click="remove(index)">删除</Button>
-                    </template>
-                </Table>
-                <br>
-            </div>
-            <!-- 分页部分 -->
-            <div>
-                <Page
-                    :total="total" 
-                    :page-size="pageSize"
-                    @on-change="on_change"
-                >
-
-                </Page>
-            </div>
-        </Card>
-
-    </div>
+  <div>
+    <card style="margin:0 auto">
+        <div id="pay_type_chart" :style="{width: '80%', height: '400px'}"></div>
+    </card>
+  </div>
 </template>
 
 <script>
+
+
 export default {
-    data(){
-        return{
-            pay_type_show:true,
-            total:11,
-            pageSize:10,
-            columns_data:[],
-            columns: [
-                {
-                    title: 'ID',
-                    key: 'id',
-                    width:50
-                },
-                {
-                    title: '句子内容',
-                    key: 'content'
-                },
-                {
-                    title: '发布者',
-                    key: 'uname'
-                },
-                {
-                    title: '操作',
-                    slot: 'action',
-                    width: 150,
-                    align: 'center'
-                }
-            ],
-        }
-    },
-    methods: {
-        getPage(num){
-            
-        },
-        on_change(nextNum){
-            alert("页面发生变动")
-        },
-        search(){
-            alert("search");
-        },
-        refresh(){
-            alert("refresh")
-        },
-        show (index) {
-            this.$Modal.info({
-                title: '信息查看',
-                content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
-            })
-        },
-        remove (index) {
-            this.data6.splice(index, 1);
-            alert("删除了第"+index)
-        }
+
+  components: {
+
+  },
+  data () {
+    return {
+        
     }
+  },
+  mounted () {
+    this.draw_pay_type_chart()
+  },
+  methods:{
+    // 支付方式对比图
+    draw_pay_type_chart(){
+        let setChart = this.$echarts.init(document.getElementById('pay_type_chart'),'vintage')
+        setChart.setOption({
+            title : {
+                text: '支付方式对比图',
+                subtext: '',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['微信','其他','支付宝']
+            },
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius : '40%',
+                    center: ['50%', '50%'],
+                    data:[
+                        {value:335, name:'微信'},
+                        {value:310, name:'支付宝'},
+                        {value:234, name:'其他'},
+                    ],
+                    label:{
+                        normal: {
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            // shadowBlur:3,
+                            // shadowOffsetX: 2,
+                            // shadowOffsetY: 2,
+                            // shadowColor: '#999',
+                            // padding: [0, 7],
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                // abg: {
+                                //     backgroundColor: '#333',
+                                //     width: '100%',
+                                //     align: 'right',
+                                //     height: 22,
+                                //     borderRadius: [4, 4, 0, 0]
+                                // },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '20%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 33
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        })
+    },
+
+  }
 }
 </script>
 
-<style>
-.search-bar{
-    height: 30px;
-    
+<style lang="less">
+.count-style{
+  font-size: 50px;
 }
 </style>

@@ -20,6 +20,11 @@ if (process.env.NODE_ENV !== 'production') require('@/mock')
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
+// 引入 v-calendar & v-date-picker components
+import VCalendar from 'v-calendar';
+Vue.use(
+    VCalendar, {componentPrefix: 'vc',} // Use <vc-calendar /> instead of <v-calendar />
+);
 
 Vue.use(iView, {
   i18n: (key, value) => i18n.t(key, value)
