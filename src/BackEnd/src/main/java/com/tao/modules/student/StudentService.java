@@ -32,4 +32,9 @@ public class StudentService {
 
         return result.toJSON();
     }
+
+    public void save(SimpleMap map){
+        Student student = (Student) map.toBean(Student.class);
+        studentMapper.insertSelective(student);
+    }
 }

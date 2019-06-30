@@ -89,6 +89,12 @@
             <artifactId>xstream</artifactId>
             <version>1.4.10</version>
         </dependency>
+        <!--&lt;!&ndash;CSV文件读写&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.opencsv</groupId>-->
+            <!--<artifactId>opencsv</artifactId>-->
+            <!--<version>4.6</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 

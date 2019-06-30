@@ -1,4 +1,4 @@
-#idea
+﻿#idea
 .idea/
 
 #java
@@ -10,3 +10,6 @@ bin/**
 
 #配置文件
 *.yml
+
+#账单资源
+.csv

@@ -1,16 +1,23 @@
 package com.tao.modules.upload;
 
+import com.alibaba.fastjson.JSONObject;
+import com.tao.data.generator.pojo.WxBill;
+import com.tao.modules.billdetail.service.WxBillService;
+import com.tao.modules.convert.ConvertFactory;
+import com.tao.pojo.sys.SimpleMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 @Service
 public class UploadService {
+    @Autowired
+    private ConvertFactory stringConvert;
+    @Autowired
+    private WxBillService wxBillService;
     @Transactional
     public void file2Data(MultipartFile file){
         //解析文件
@@ -26,5 +33,40 @@ public class UploadService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 处理上传的微信文件
+     * @param file
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void solveWxCSVBill(MultipartFile file){
+        ////////////////////////////////////////////////
+        //使用openCSV进行CSV文件的解析工作（csv->bean）
+        ////////////////////////////////////////////////
+        InputStreamReader inReader = null;
+        try {
+            inReader = new InputStreamReader(file.getInputStream(),"utf8");
+            LineNumberReader br = new LineNumberReader(inReader);
+            //删去无用的部分，bufferReader读取一行后，自动清除改行内容
+            for(String line=null;(line=br.readLine())!=null;){
+                if(br.getLineNumber()>=18){
+                    WxBill wxBill = stringConvert.toWxBill(line);
+                    System.out.println(JSONObject.toJSONString(wxBill));
+                    //验证数据是否存在
+                    SimpleMap billExistQueryMap = new SimpleMap();
+                    billExistQueryMap.put("tradeNum",wxBill.getTradeNum());
+                    boolean exist = wxBillService.exist(billExistQueryMap);
+
+                    if(!exist){
+                        //插入数据
+                        wxBillService.save(wxBill);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
