@@ -1,6 +1,6 @@
 package com.tao.data.generator.pojo;
 
-public class WxBill {
+public class BillDetailWx {
     private Long id;
 
     private Long gmtCreate;

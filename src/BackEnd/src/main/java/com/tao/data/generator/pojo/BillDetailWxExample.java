@@ -3,14 +3,14 @@ package com.tao.data.generator.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WxBillExample {
+public class BillDetailWxExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public WxBillExample() {
+    public BillDetailWxExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
