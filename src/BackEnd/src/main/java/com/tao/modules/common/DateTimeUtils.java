@@ -1,4 +1,6 @@
-package com.tao.uitl;
+package com.tao.modules.common;
+
+import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -69,4 +71,28 @@ public class DateTimeUtils {
         return date.getTime() / 1000;
     }
 
+    /**
+     * 获取当日00:00：00的时间戳
+     * @return
+     */
+    public static Long getDayStartTimestamp(){
+        String dateString = DateFormatUtils.format(new Date(), "yyyy-MM-dd 00:00:00");
+        Long dateTimestamp = dateTime2Timestamp(dateString, "yyyy-MM-dd HH:mm:ss");
+        return dateTimestamp;
+    }
+
+    /**
+     * 获取当日23：59：59的时间戳
+     * @return
+     */
+    public static Long getDayEndTimestamp(){
+        String dateString = DateFormatUtils.format(new Date(), "yyyy-MM-dd 23:59:59");
+        Long dateTimestamp = dateTime2Timestamp(dateString, "yyyy-MM-dd HH:mm:ss");
+        return dateTimestamp;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getDayStartTimestamp());
+        System.out.println(getDayEndTimestamp());
+    }
 }
