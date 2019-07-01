@@ -79,6 +79,13 @@ public class DateTimeUtils {
         String dateString = DateFormatUtils.format(new Date(), "yyyy-MM-dd 00:00:00");
         Long dateTimestamp = dateTime2Timestamp(dateString, "yyyy-MM-dd HH:mm:ss");
         return dateTimestamp;
+
+//        其他方法
+//        Calendar calendar1 = Calendar.getInstance();
+//        calendar1.set(calendar1.get(Calendar.YEAR), calendar1.get(Calendar.MONTH), calendar1.get(Calendar.DAY_OF_MONTH),
+//                0, 0, 0);
+//        Date beginOfDate = calendar1.getTime();
+//        System.out.println(beginOfDate);
     }
 
     /**
@@ -89,6 +96,13 @@ public class DateTimeUtils {
         String dateString = DateFormatUtils.format(new Date(), "yyyy-MM-dd 23:59:59");
         Long dateTimestamp = dateTime2Timestamp(dateString, "yyyy-MM-dd HH:mm:ss");
         return dateTimestamp;
+
+        // 其他方法 获取当天23点59分59秒Date
+//        Calendar calendar2 = Calendar.getInstance();
+//        calendar2.set(calendar2.get(Calendar.YEAR), calendar2.get(Calendar.MONTH), calendar2.get(Calendar.DAY_OF_MONTH),
+//                23, 59, 59);
+//        Date endOfDate = calendar2.getTime();
+//        System.out.println(endOfDate);
     }
 
     public static void main(String[] args) {

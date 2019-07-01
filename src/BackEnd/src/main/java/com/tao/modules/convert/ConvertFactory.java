@@ -1,7 +1,7 @@
 package com.tao.modules.convert;
 
 import com.tao.data.generator.pojo.WxBill;
-import com.tao.uitl.DateTimeUtils;
+import com.tao.modules.common.DateTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
