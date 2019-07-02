@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tao.data.generator.dao.BillDetailAliMapper">
+  <resultMap id="BaseResultMap" type="com.tao.data.generator.pojo.BillDetailAli">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="gmt_create" jdbcType="BIGINT" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="BIGINT" property="gmtModified" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="pay_creat_time" jdbcType="BIGINT" property="payCreatTime" />
+    <result column="pay_time" jdbcType="BIGINT" property="payTime" />
+    <result column="pay_modified_time" jdbcType="BIGINT" property="payModifiedTime" />
+    <result column="bill_place" jdbcType="VARCHAR" property="billPlace" />
+    <result column="bill_type" jdbcType="SMALLINT" property="billType" />
+    <result column="trader" jdbcType="VARCHAR" property="trader" />
+    <result column="goods" jdbcType="VARCHAR" property="goods" />
+    <result column="pay_num" jdbcType="BIGINT" property="payNum" />
+    <result column="income_type" jdbcType="SMALLINT" property="incomeType" />
+    <result column="pay_status" jdbcType="SMALLINT" property="payStatus" />
+    <result column="pay_service" jdbcType="BIGINT" property="payService" />
+    <result column="pay_return" jdbcType="BIGINT" property="payReturn" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="trade_num" jdbcType="VARCHAR" property="tradeNum" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, gmt_create, gmt_modified, status, pay_creat_time, pay_time, pay_modified_time, 
+    bill_place, bill_type, trader, goods, pay_num, income_type, pay_status, pay_service, 
+    pay_return, remark, trade_num
+  </sql>
+  <select id="selectByExample" parameterType="com.tao.data.generator.pojo.BillDetailAliExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bill_detail_ali
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bill_detail_ali
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bill_detail_ali
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tao.data.generator.pojo.BillDetailAliExample">
+    delete from bill_detail_ali
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tao.data.generator.pojo.BillDetailAli">
+    insert into bill_detail_ali (id, gmt_create, gmt_modified, 
+      status, pay_creat_time, pay_time, 
+      pay_modified_time, bill_place, bill_type, 
+      trader, goods, pay_num, 
+      income_type, pay_status, pay_service, 
+      pay_return, remark, trade_num
+      )
+    values (#{id,jdbcType=BIGINT}, #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, 
+      #{status,jdbcType=SMALLINT}, #{payCreatTime,jdbcType=BIGINT}, #{payTime,jdbcType=BIGINT}, 
+      #{payModifiedTime,jdbcType=BIGINT}, #{billPlace,jdbcType=VARCHAR}, #{billType,jdbcType=SMALLINT}, 
+      #{trader,jdbcType=VARCHAR}, #{goods,jdbcType=VARCHAR}, #{payNum,jdbcType=BIGINT}, 
+      #{incomeType,jdbcType=SMALLINT}, #{payStatus,jdbcType=SMALLINT}, #{payService,jdbcType=BIGINT}, 
+      #{payReturn,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, #{tradeNum,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tao.data.generator.pojo.BillDetailAli">
+    insert into bill_detail_ali
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="payCreatTime != null">
+        pay_creat_time,
+      </if>
+      <if test="payTime != null">
+        pay_time,
+      </if>
+      <if test="payModifiedTime != null">
+        pay_modified_time,
+      </if>
+      <if test="billPlace != null">
+        bill_place,
+      </if>
+      <if test="billType != null">
+        bill_type,
+      </if>
+      <if test="trader != null">
+        trader,
+      </if>
+      <if test="goods != null">
+        goods,
+      </if>
+      <if test="payNum != null">
+        pay_num,
+      </if>
+      <if test="incomeType != null">
+        income_type,
+      </if>
+      <if test="payStatus != null">
+        pay_status,
+      </if>
+      <if test="payService != null">
+        pay_service,
+      </if>
+      <if test="payReturn != null">
+        pay_return,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="tradeNum != null">
+        trade_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=BIGINT},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="payCreatTime != null">
+        #{payCreatTime,jdbcType=BIGINT},
+      </if>
+      <if test="payTime != null">
+        #{payTime,jdbcType=BIGINT},
+      </if>
+      <if test="payModifiedTime != null">
+        #{payModifiedTime,jdbcType=BIGINT},
+      </if>
+      <if test="billPlace != null">
+        #{billPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="billType != null">
+        #{billType,jdbcType=SMALLINT},
+      </if>
+      <if test="trader != null">
+        #{trader,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null">
+        #{goods,jdbcType=VARCHAR},
+      </if>
+      <if test="payNum != null">
+        #{payNum,jdbcType=BIGINT},
+      </if>
+      <if test="incomeType != null">
+        #{incomeType,jdbcType=SMALLINT},
+      </if>
+      <if test="payStatus != null">
+        #{payStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="payService != null">
+        #{payService,jdbcType=BIGINT},
+      </if>
+      <if test="payReturn != null">
+        #{payReturn,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeNum != null">
+        #{tradeNum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tao.data.generator.pojo.BillDetailAliExample" resultType="java.lang.Long">
+    select count(*) from bill_detail_ali
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bill_detail_ali
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.gmtCreate != null">
+        gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+      </if>
+      <if test="record.gmtModified != null">
+        gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=SMALLINT},
+      </if>
+      <if test="record.payCreatTime != null">
+        pay_creat_time = #{record.payCreatTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.payTime != null">
+        pay_time = #{record.payTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.payModifiedTime != null">
+        pay_modified_time = #{record.payModifiedTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.billPlace != null">
+        bill_place = #{record.billPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billType != null">
+        bill_type = #{record.billType,jdbcType=SMALLINT},
+      </if>
+      <if test="record.trader != null">
+        trader = #{record.trader,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goods != null">
+        goods = #{record.goods,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payNum != null">
+        pay_num = #{record.payNum,jdbcType=BIGINT},
+      </if>
+      <if test="record.incomeType != null">
+        income_type = #{record.incomeType,jdbcType=SMALLINT},
+      </if>
+      <if test="record.payStatus != null">
+        pay_status = #{record.payStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="record.payService != null">
+        pay_service = #{record.payService,jdbcType=BIGINT},
+      </if>
+      <if test="record.payReturn != null">
+        pay_return = #{record.payReturn,jdbcType=BIGINT},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeNum != null">
+        trade_num = #{record.tradeNum,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bill_detail_ali
+    set id = #{record.id,jdbcType=BIGINT},
+      gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+      gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=SMALLINT},
+      pay_creat_time = #{record.payCreatTime,jdbcType=BIGINT},
+      pay_time = #{record.payTime,jdbcType=BIGINT},
+      pay_modified_time = #{record.payModifiedTime,jdbcType=BIGINT},
+      bill_place = #{record.billPlace,jdbcType=VARCHAR},
+      bill_type = #{record.billType,jdbcType=SMALLINT},
+      trader = #{record.trader,jdbcType=VARCHAR},
+      goods = #{record.goods,jdbcType=VARCHAR},
+      pay_num = #{record.payNum,jdbcType=BIGINT},
+      income_type = #{record.incomeType,jdbcType=SMALLINT},
+      pay_status = #{record.payStatus,jdbcType=SMALLINT},
+      pay_service = #{record.payService,jdbcType=BIGINT},
+      pay_return = #{record.payReturn,jdbcType=BIGINT},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      trade_num = #{record.tradeNum,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tao.data.generator.pojo.BillDetailAli">
+    update bill_detail_ali
+    <set>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=BIGINT},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="payCreatTime != null">
+        pay_creat_time = #{payCreatTime,jdbcType=BIGINT},
+      </if>
+      <if test="payTime != null">
+        pay_time = #{payTime,jdbcType=BIGINT},
+      </if>
+      <if test="payModifiedTime != null">
+        pay_modified_time = #{payModifiedTime,jdbcType=BIGINT},
+      </if>
+      <if test="billPlace != null">
+        bill_place = #{billPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="billType != null">
+        bill_type = #{billType,jdbcType=SMALLINT},
+      </if>
+      <if test="trader != null">
+        trader = #{trader,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null">
+        goods = #{goods,jdbcType=VARCHAR},
+      </if>
+      <if test="payNum != null">
+        pay_num = #{payNum,jdbcType=BIGINT},
+      </if>
+      <if test="incomeType != null">
+        income_type = #{incomeType,jdbcType=SMALLINT},
+      </if>
+      <if test="payStatus != null">
+        pay_status = #{payStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="payService != null">
+        pay_service = #{payService,jdbcType=BIGINT},
+      </if>
+      <if test="payReturn != null">
+        pay_return = #{payReturn,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeNum != null">
+        trade_num = #{tradeNum,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tao.data.generator.pojo.BillDetailAli">
+    update bill_detail_ali
+    set gmt_create = #{gmtCreate,jdbcType=BIGINT},
+      gmt_modified = #{gmtModified,jdbcType=BIGINT},
+      status = #{status,jdbcType=SMALLINT},
+      pay_creat_time = #{payCreatTime,jdbcType=BIGINT},
+      pay_time = #{payTime,jdbcType=BIGINT},
+      pay_modified_time = #{payModifiedTime,jdbcType=BIGINT},
+      bill_place = #{billPlace,jdbcType=VARCHAR},
+      bill_type = #{billType,jdbcType=SMALLINT},
+      trader = #{trader,jdbcType=VARCHAR},
+      goods = #{goods,jdbcType=VARCHAR},
+      pay_num = #{payNum,jdbcType=BIGINT},
+      income_type = #{incomeType,jdbcType=SMALLINT},
+      pay_status = #{payStatus,jdbcType=SMALLINT},
+      pay_service = #{payService,jdbcType=BIGINT},
+      pay_return = #{payReturn,jdbcType=BIGINT},
+      remark = #{remark,jdbcType=VARCHAR},
+      trade_num = #{tradeNum,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
