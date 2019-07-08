@@ -1,8 +1,10 @@
 package com.tao.modules.upload;
 
 import com.alibaba.fastjson.JSONObject;
+import com.tao.data.generator.dao.BillDetailAliMapper;
 import com.tao.data.generator.pojo.BillDetailAli;
 import com.tao.data.generator.pojo.BillDetailWx;
+import com.tao.data.me.AliBillMapperMe;
 import com.tao.modules.billdetail.service.AliBillService;
 import com.tao.modules.billdetail.service.WxBillService;
 import com.tao.modules.convert.ConvertFactory;
@@ -24,6 +26,8 @@ public class UploadService {
     private WxBillService wxBillService;
     @Autowired
     private AliBillService aliBillService;
+    @Autowired
+    private BillDetailAliMapper billDetailAliMapper;
 
     private static Logger logger = LoggerFactory.getLogger(UploadService.class);
 
@@ -87,15 +91,18 @@ public class UploadService {
                 if(br.getLineNumber()>=6 && line.split(",").length>8){
                     //数据转化
                     BillDetailAli billDetailAli = stringConvert.toAliBill(line);
-                    logger.info("导出成功-{}",JSONObject.toJSONString(billDetailAli));
+                    logger.info("获取成功-{}",JSONObject.toJSONString(billDetailAli));
 
                     SimpleMap aliGetOneMap = new SimpleMap();
                     aliGetOneMap.put("tradeNum",billDetailAli.getTradeNum());
                     SimpleMap one = aliBillService.getOne(aliGetOneMap);
                     if(one==null){ //没有该账单，直接插入
-
+                        billDetailAliMapper.insertSelective(billDetailAli);
+                        logger.info("新建成功-{}",JSONObject.toJSONString(billDetailAli));
+                    }else if (!billDetailAli.getPayStatus().equals(Short.valueOf(one.getString("payStatus")))){ //账单存在，对比账单状态是否相同，不相同则插入
+                        billDetailAliMapper.insertSelective(billDetailAli);
+                        logger.info("更新成功-{}",JSONObject.toJSONString(billDetailAli));
                     }
-                    System.out.println();
                 }
             }
         } catch (Exception e) {

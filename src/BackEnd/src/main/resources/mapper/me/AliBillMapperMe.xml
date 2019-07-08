@@ -4,7 +4,7 @@
     <!--
         自增ID设置： useGeneratedKeys="true" keyProperty="id"
     -->
-    <select id="getOne" resultType="map" parameterType="map">
+    <select id="getOne" resultType="com.tao.pojo.sys.SimpleMap" parameterType="map">
         SELECT *
         FROM `bill_detail_ali`
         <if test="id!=null and tradeNum==null"> WHERE id=#{id}</if>

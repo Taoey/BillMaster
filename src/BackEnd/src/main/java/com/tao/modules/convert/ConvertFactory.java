@@ -53,7 +53,7 @@ public class ConvertFactory {
         aliBill.setTradeNum(strList[0]);
         aliBill.setPayCreatTime(DateTimeUtils.dateTime2Timestamp(strList[2],"yyyy-MM-dd HH:mm:ss"));
         aliBill.setPayTime(DateTimeUtils.dateTime2Timestamp(strList[3],"yyyy-MM-dd HH:mm:ss"));
-        aliBill.setPayTime(DateTimeUtils.dateTime2Timestamp(strList[4],"yyyy-MM-dd HH:mm:ss"));
+        aliBill.setPayModifiedTime(DateTimeUtils.dateTime2Timestamp(strList[4],"yyyy-MM-dd HH:mm:ss"));
         aliBill.setBillPlace(strList[5]);
         aliBill.setBillType(aliBillConvert.billType(strList[6]));
         aliBill.setTrader(strList[7]);
@@ -63,7 +63,7 @@ public class ConvertFactory {
         aliBill.setPayStatus(aliBillConvert.payStatus(strList[11]));
         aliBill.setPayService(aliBillConvert.payNum(strList[12]));
         aliBill.setPayReturn(aliBillConvert.payNum(strList[13]));
-        aliBill.setRemark(strList[12]);
+        aliBill.setRemark(strList[14]);
         return  aliBill;
     }
 }
