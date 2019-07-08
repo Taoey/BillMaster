@@ -4,4 +4,8 @@
     <!--
         自增ID设置： useGeneratedKeys="true" keyProperty="id"
     -->
+    <!--
+    相似查询
+    concat('%',#{title},'%')
+    -->
 </mapper>

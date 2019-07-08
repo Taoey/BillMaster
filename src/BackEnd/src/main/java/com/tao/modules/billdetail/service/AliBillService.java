@@ -1,5 +1,7 @@
 package com.tao.modules.billdetail.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.tao.data.generator.dao.BillDetailAliMapper;
 import com.tao.data.me.AliBillMapperMe;
 import com.tao.modules.common.service.CommonService;
@@ -28,7 +30,12 @@ public class AliBillService implements CommonService {
 
     @Override
     public GridPage list(SimpleMap map) {
-        return null;
+        GridPage result = new GridPage();
+        Page<Object> page = PageHelper.startPage(map.getPageNum(), map.getPageSize());
+        aliBillMapperMe.list(map);
+        result.setRows(page.getResult());
+        result.setTotal(page.getTotal());
+        return result;
     }
 
     /**

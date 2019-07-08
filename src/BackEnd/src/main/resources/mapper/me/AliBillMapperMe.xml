@@ -12,4 +12,22 @@
         <if test="id!=null and tradeNum!=null"> WHERE id=#{id}</if>
         limit 1
     </select>
+
+    <select id="list" resultType="SimpleMap" parameterType="map">
+        SELECT *
+        FROM `bill_detail_ali`
+        WHERE `status`=1
+        <if test="startTime !=null">
+            AND gmt_create &gt;= #{timeStart}
+        </if>
+        <if test="endTime !=null">
+            AND gmt_create &lt;= #{timeEnd}
+        </if>
+        <if test="goods !=null">
+            AND goods LIKE CONCAT('%',#{goods},'%')
+        </if>
+        <if test="remark !=null">
+            AND remark LIKE CONCAT('%',#{remark},'%')
+        </if>
+    </select>
 </mapper>
