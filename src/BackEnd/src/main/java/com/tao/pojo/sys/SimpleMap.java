@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class SimpleMap extends HashMap<String, Object> implements Serializable {
 
     private static final long serialVersionUID = -5809782578272943999L;
-    private static final int MAX_PAGE_SIZE = 200;
+    private static final int MAX_PAGE_SIZE = 100;
     private static final int MIN_PAGE_SIZE = 10;
 
     public Integer getInteger(String key) {
