@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tao.data.me.AliBillMapperMe">
+    <!--
+        自增ID设置： useGeneratedKeys="true" keyProperty="id"
+    -->
+    <select id="getOne" resultType="map" parameterType="map">
+        SELECT *
+        FROM `bill_detail_ali`
+        <if test="id!=null and tradeNum==null"> WHERE id=#{id}</if>
+        <if test="id==null and tradeNum!=null"> WHERE trade_num=#{tradeNum}</if>
+        <if test="id!=null and tradeNum!=null"> WHERE id=#{id}</if>
+        limit 1
+    </select>
+</mapper>

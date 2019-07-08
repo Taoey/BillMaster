@@ -1,4 +1,4 @@
-package com.tao.modules.common;
+package com.tao.modules.common.utils;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 

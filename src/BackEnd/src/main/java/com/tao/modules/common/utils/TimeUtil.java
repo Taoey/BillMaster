@@ -1,4 +1,4 @@
-package com.tao.modules.common;
+package com.tao.modules.common.utils;
 
 
 import com.tao.pojo.sys.SimpleMap;

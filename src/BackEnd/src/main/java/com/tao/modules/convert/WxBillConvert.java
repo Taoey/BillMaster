@@ -43,10 +43,10 @@ public class WxBillConvert {
 
     /**
      * 收入数据转换
-     * @param str
+     * @param str ¥4.00
      * @return
      */
     public Long payNum(String str){
-        return Long.valueOf(str.substring(1).replace(".",""));
+        return Long.valueOf(str.trim().substring(1).replace(".",""));
     }
 }

@@ -1,4 +1,4 @@
-package com.tao.modules.common;
+package com.tao.modules.common.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

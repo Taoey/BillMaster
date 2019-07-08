@@ -1,10 +1,14 @@
 package com.tao.modules.upload;
 
 import com.alibaba.fastjson.JSONObject;
+import com.tao.data.generator.pojo.BillDetailAli;
 import com.tao.data.generator.pojo.BillDetailWx;
+import com.tao.modules.billdetail.service.AliBillService;
 import com.tao.modules.billdetail.service.WxBillService;
 import com.tao.modules.convert.ConvertFactory;
 import com.tao.pojo.sys.SimpleMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +22,11 @@ public class UploadService {
     private ConvertFactory stringConvert;
     @Autowired
     private WxBillService wxBillService;
+    @Autowired
+    private AliBillService aliBillService;
+
+    private static Logger logger = LoggerFactory.getLogger(UploadService.class);
+
     @Transactional
     public void file2Data(MultipartFile file){
         //解析文件
@@ -41,9 +50,6 @@ public class UploadService {
      */
     @Transactional(rollbackFor = Exception.class)
     public void solveWxCSVBill(MultipartFile file){
-        ////////////////////////////////////////////////
-        //使用openCSV进行CSV文件的解析工作（csv->bean）
-        ////////////////////////////////////////////////
         InputStreamReader inReader = null;
         try {
             inReader = new InputStreamReader(file.getInputStream(),"utf8");
@@ -68,5 +74,32 @@ public class UploadService {
             e.printStackTrace();
         }
 
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void solveAliCSVBill(MultipartFile file){
+        InputStreamReader inReader = null;
+        try {
+            inReader = new InputStreamReader(file.getInputStream(),"gbk");
+            LineNumberReader br = new LineNumberReader(inReader);
+            //删去无用的部分，bufferReader读取一行后，自动清除改行内容
+            for(String line=null;(line=br.readLine())!=null;){
+                if(br.getLineNumber()>=6 && line.split(",").length>8){
+                    //数据转化
+                    BillDetailAli billDetailAli = stringConvert.toAliBill(line);
+                    logger.info("导出成功-{}",JSONObject.toJSONString(billDetailAli));
+
+                    SimpleMap aliGetOneMap = new SimpleMap();
+                    aliGetOneMap.put("tradeNum",billDetailAli.getTradeNum());
+                    SimpleMap one = aliBillService.getOne(aliGetOneMap);
+                    if(one==null){ //没有该账单，直接插入
+
+                    }
+                    System.out.println();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
