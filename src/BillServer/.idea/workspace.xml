@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d677df5-c285-4fad-b639-728524e21e11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../db/JBill.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/查询SQL.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/MyCorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/MyExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/MyFastJsonConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/MyFilterConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/MyUrlMatchConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/maptocamel/CustomWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/maptocamel/MapWrapperFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/config/maptocamel/MybatisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/dao/BillDetailAliMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/dao/BillDetailWxMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/dao/StudentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/pojo/BillDetailAli.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/pojo/BillDetailAliExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/pojo/BillDetailWx.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/pojo/BillDetailWxExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/pojo/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/generator/pojo/StudentExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/me/AliBillMapperMe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/me/MapperCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/data/me/WxBillMapperMe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/filter/ExceptionFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/filter/TestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/billdetail/controller/AliBillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/billdetail/controller/WxBillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/billdetail/service/AliBillService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/billdetail/service/WxBillService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/common/service/CommonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/common/utils/DESUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/common/utils/DateTimeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/common/utils/DateUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/common/utils/TimeUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/convert/AliBillConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/convert/ConvertFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/convert/WxBillConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/exception/ExceptionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/student/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/student/StudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/template/TemplateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/test/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/upload/UploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/modules/upload/UploadService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/pojo/entity/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/pojo/sys/GridPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/pojo/sys/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/pojo/sys/SimpleMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/tao/runner/MyRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/application.yml.template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/mapper/generator/BillDetailAliMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/mapper/generator/BillDetailWxMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/mapper/generator/StudentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/mapper/me/AliBillMapperMe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/mapper/me/MapperCenter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/mapper/me/WxBillMapperMe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/开发规范说明.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.postcssrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/config/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/config/url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/cypress.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/api/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/api/routers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/api/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/icons/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/icons/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/icons/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/icons/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/icons/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/error-page/error-401.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/error-page/error-404.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/error-page/error-500.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/login-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/logo-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/qq-fance.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/qq-fance2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/assets/images/talkingdata.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/charts/bar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/charts/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/charts/pie.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/charts/theme.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/common-icon/common-icon.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/common-icon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/common/common.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/common/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/count-to/count-to.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/count-to/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/count-to/index.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/drag-list/drag-list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/drag-list/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/editor/editor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/editor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/icons/icons.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/info-card/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/info-card/infor-card.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/login-form/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/login-form/login-form.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/error-store/error-store.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/error-store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/fullscreen/fullscreen.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/fullscreen/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/custom-bread-crumb/custom-bread-crumb.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/custom-bread-crumb/custom-bread-crumb.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/custom-bread-crumb/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/header-bar.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/header-bar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/sider-trigger/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/sider-trigger/sider-trigger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/header-bar/sider-trigger/sider-trigger.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/language/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/language/language.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/collapsed-menu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/item-mixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/mixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/side-menu-item.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/side-menu.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/side-menu/side-menu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/tags-nav/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/tags-nav/tags-nav.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/tags-nav/tags-nav.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/user/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/user/user.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/components/user/user.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/main.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/main/main.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/markdown/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/markdown/markdown.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/parent-view/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/parent-view/parent-view.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/paste-editor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/paste-editor/paste-editor.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/paste-editor/paste-editor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/paste-editor/plugins/placeholder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/split-pane/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/split-pane/index.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/split-pane/split.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/split-pane/trigger.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/tables/edit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/tables/handle-btns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/tables/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/tables/index.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/tables/tables.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/directive/directives.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/directive/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/index.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/libs/api.request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/libs/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/libs/excel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/libs/tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/libs/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/locale/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/locale/lang/en-US.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/locale/lang/zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/locale/lang/zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/mock/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/mock/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/mock/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/plugin/error-store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/plugin/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/router/before-close.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/router/routers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/store/module/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/store/module/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/bill/detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/bill/index0.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/bill/statistics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/error-page/401.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/error-page/404.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/error-page/500.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/error-page/back-btn-group.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/error-page/error-content.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/error-page/error.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/login/login.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/login/login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-2-1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-2-2/level-3-1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-2-3.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-2/level-2-1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-2/level-2-2.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/multilevel/level-2/level-3/level-3-1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/single-page/home/example.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/single-page/home/home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/view/single-page/home/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/e2e/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/e2e/plugins/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/e2e/specs/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/e2e/support/commands.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/e2e/support/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/unit/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/tests/unit/HelloWorld.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/vue.config.js" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entity/const.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entity/Message.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/myservice/UploadService.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/myservice/UploadService_test.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/myapi/IndexAPI.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+              <folding>
+                <element signature="e#15#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/myapi/IndexAPI_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#15#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/myapi/UploadAPI.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+              <folding>
+                <element signature="e#14#83#0" expanded="true" />
+                <element signature="n#!!block;n#main#1" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/modules.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>IRIS</find>
+    </findStrings>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/modules/myapi/UploadAPI.go" />
+        <option value="$PROJECT_DIR$/src/myinit/InitQuartz.go" />
+        <option value="$PROJECT_DIR$/../../../go/pkg/mod/github.com/bamzi/jobrunner@v0.0.0-20190810144113-852b7ca4d475/init.go" />
+        <option value="$PROJECT_DIR$/go.mod" />
+        <option value="$PROJECT_DIR$/src/main/routes.go" />
+        <option value="$PROJECT_DIR$/src/main/global.go" />
+        <option value="$PROJECT_DIR$/src/App.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="316" />
+    <option name="y" value="44" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="myapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="myservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BillServer" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BillServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\projects\BillMaster\src\BillServer\src\main" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="go build App.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="BillServer" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/App.go" />
+      <package value="BillServer/src" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build App.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="6" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>direct</proxy>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/entity/Message_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#16#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/system/job/PrintTime.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#13#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myinit/InitConfig.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#16#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../go/pkg/mod/github.com/bamzi/jobrunner@v0.0.0-20190810144113-852b7ca4d475/init.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myinit/InitQuartz.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="e#16#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myinit/InitMongo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/const.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Message.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/myservice/UploadService.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/myservice/UploadService_test.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/myapi/IndexAPI.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding>
+            <element signature="e#15#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/myapi/IndexAPI_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#15#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/myapi/UploadAPI.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/global.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/routes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="21" />
+          <folding>
+            <element signature="e#14#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="e#14#83#0" expanded="true" />
+            <element signature="n#!!block;n#main#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/modules.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
